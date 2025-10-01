@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>baka !!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-bottom: 50px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      position: absolute;
+      transition: all 0.3s ease; /* smooth movement */
+    }
+
+    #yes {
+      background-color: green;
+      color: white;
+      left: 40%;
+      top: 50%;
+    }
+
+    #no {
+      background-color: red;
+      color: white;
+      left: 55%;
+      top: 50%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Are you gay? </h1>
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+
+    // If user clicks YES → go to next page
+    yesBtn.addEventListener("click", () => {
+      window.location.href = "nextpage.html"; // change this to your page
+    });
+
+    // Make NO button run smoothly away from cursor
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * (window.innerWidth - noBtn.clientWidth));
+      const y = Math.floor(Math.random() * (window.innerHeight - noBtn.clientHeight));
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
